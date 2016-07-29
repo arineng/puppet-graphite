@@ -87,15 +87,17 @@ class graphite::install inherits graphite::params {
     ,
   }
   , {
-    provider => $gr_pkg_provider,
-    require  => $gr_pkg_require,
+    provider        => $gr_pkg_provider,
+    require         => $gr_pkg_require,
+    install_options => $pip_options,
   }
   )
 
   if $::graphite::gr_django_pkg {
     package { $::graphite::gr_django_pkg:
-      ensure   => $::graphite::gr_django_ver,
-      provider => $::graphite::gr_django_provider,
+      ensure          => $::graphite::gr_django_ver,
+      provider        => $::graphite::gr_django_provider,
+      install_options => $pip_options,
     }
   }
 

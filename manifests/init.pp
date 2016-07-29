@@ -724,6 +724,7 @@ class graphite (
   $gr_prefetch_cache                      = undef,
   $gr_apache_port                         = undef,
   $gr_apache_port_https                   = undef,) inherits graphite::params {
+  $pip_options                            = {}
   # Validation of input variables.
   # TODO - validate all the things
   validate_string($gr_use_remote_user_auth)
